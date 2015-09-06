@@ -30,4 +30,8 @@ class RibosomeTest(TestCase):
                                            AminoAcid.mvr, AminoAcid.mvl])
 
     def test_can_cut_into_multiple_acid_chains(self):
-        pass
+        strand = 'ACGCAACACCG'
+        amino_acids = list(ribosome_get_amino_acids_from_strands(strand))
+        self.assertEqual(len(amino_acids), 2)
+        self.assertListEqual(amino_acids[0], [AminoAcid.cut, AminoAcid.inc])
+        self.assertListEqual(amino_acids[1], [AminoAcid.mvr, AminoAcid.mvl])
