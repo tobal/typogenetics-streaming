@@ -23,14 +23,19 @@ class AminoAcid(Enum):
     lpy = 'TG'
     lpu = 'TT'
 
+    @classmethod
+    def get_acid_by_pair(cls, pair):
+        for acid in cls:
+            if pair == acid.value:
+                return acid
+
 def ribosome_get_amino_acids_from_strands(strand):
     if not strand:
-        return []
-    acids = []
-    for acid in AminoAcid:
-        if strand == acid.value:
-            acids.append(acid)
-    return acids
+        return
+    length = len(strand) // 2
+    for i in range(length):
+        pair = strand[i*2:(i+1)*2]
+        yield AminoAcid.get_acid_by_pair(pair)
 
 if __name__ == '__main__':
     pass
