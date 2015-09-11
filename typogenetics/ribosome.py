@@ -2,10 +2,6 @@
 
 from enum import Enum
 
-class WorkingEnzyme():
-    strand_pair = None
-    head_pos = None
-
 class AminoAcid(Enum):
     cut = 'AC'
     dlt = 'AG'
