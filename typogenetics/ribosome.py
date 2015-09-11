@@ -17,5 +17,6 @@ def ribosome_get_enzymes_from_strand(strand):
             enzymes.append(AminoAcid.get_acid_by_duplet(duplet))
     yield enzymes
 
+
 if __name__ == '__main__':
     pass
