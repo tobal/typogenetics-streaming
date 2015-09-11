@@ -4,5 +4,5 @@ tests:
 
 .PHONY: clean
 clean:
-	rm -f `find . | grep .pyc`
+	rm -rf `find . | grep __pycache__`
 
