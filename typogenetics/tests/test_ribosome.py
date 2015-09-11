@@ -11,30 +11,22 @@ class RibosomeTest(TestCase):
     def test_can_convert_one_pair_to_amino_acid(self):
         strand = 'AC'
         amino_acids = list(ribosome_get_amino_acids_from_strands(strand))
-        self.assertEqual(len(amino_acids), 1)
-        self.assertEqual(len(amino_acids[0]), 1)
-        self.assertEqual(amino_acids[0][0], AminoAcid.cut)
-        self.assertEqual(amino_acids[0][0].value, strand)
+        self.assertListEqual([[AminoAcid.cut]], amino_acids)
 
     def test_converts_long_strands_to_correct_acid_chain(self):
         strand = 'ACGCCACC'
         amino_acids = list(ribosome_get_amino_acids_from_strands(strand))
-        self.assertEqual(len(amino_acids), 1)
-        self.assertEqual(len(amino_acids[0]), 4)
-        self.assertListEqual(amino_acids[0], [AminoAcid.cut, AminoAcid.inc,
-                                              AminoAcid.mvr, AminoAcid.mvl])
+        self.assertListEqual([[AminoAcid.cut, AminoAcid.inc, AminoAcid.mvr, AminoAcid.mvl]],
+                             amino_acids)
 
     def test_converts_long_strands_with_extra_character(self):
         strand = 'ACGCCACCG'
         amino_acids = list(ribosome_get_amino_acids_from_strands(strand))
-        self.assertEqual(len(amino_acids), 1)
-        self.assertEqual(len(amino_acids[0]), 4)
-        self.assertListEqual(amino_acids[0], [AminoAcid.cut, AminoAcid.inc,
-                                              AminoAcid.mvr, AminoAcid.mvl])
+        self.assertListEqual([[AminoAcid.cut, AminoAcid.inc, AminoAcid.mvr, AminoAcid.mvl]],
+                             amino_acids)
 
     def test_can_cut_into_multiple_acid_chains(self):
         strand = 'ACGCAACACCG'
         amino_acids = list(ribosome_get_amino_acids_from_strands(strand))
-        self.assertEqual(len(amino_acids), 2)
-        self.assertListEqual(amino_acids[0], [AminoAcid.cut, AminoAcid.inc])
-        self.assertListEqual(amino_acids[1], [AminoAcid.mvr, AminoAcid.mvl])
+        self.assertListEqual([[AminoAcid.cut, AminoAcid.inc], [AminoAcid.mvr, AminoAcid.mvl]],
+                             amino_acids)
