@@ -1,29 +1,7 @@
 #!/usr/bin/env python
 
-from enum import Enum
+from .aminoacid import AminoAcid
 
-class AminoAcid(Enum):
-    cut = 'AC'
-    dlt = 'AG'
-    swi = 'AT'
-    mvr = 'CA'
-    mvl = 'CC'
-    cop = 'CG'
-    off = 'CT'
-    ina = 'GA'
-    inc = 'GC'
-    ing = 'GG'
-    int = 'GT'
-    tpy = 'TA'
-    rpu = 'TC'
-    lpy = 'TG'
-    lpu = 'TT'
-
-    @classmethod
-    def get_acid_by_pair(cls, pair):
-        for acid in cls:
-            if pair == acid.value:
-                return acid
 
 def ribosome_get_amino_acids_from_strands(strand):
     if not strand:
@@ -41,4 +19,3 @@ def ribosome_get_amino_acids_from_strands(strand):
 
 if __name__ == '__main__':
     pass
-

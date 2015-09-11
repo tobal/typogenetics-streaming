@@ -1,5 +1,6 @@
 
-from ..ribosome import ribosome_get_amino_acids_from_strands, AminoAcid
+from ..ribosome import ribosome_get_amino_acids_from_strands
+from ..aminoacid import AminoAcid
 from unittest import TestCase
 
 class RibosomeTest(TestCase):
