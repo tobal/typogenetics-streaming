@@ -24,7 +24,7 @@ class AminoAcid(Enum):
     inc = Acid(duplet='GC', direction=TertiaryDirection.right)
     ing = Acid(duplet='GG', direction=TertiaryDirection.right)
     int = Acid(duplet='GT', direction=TertiaryDirection.left)
-    tpy = Acid(duplet='TA', direction=TertiaryDirection.right)
+    rpy = Acid(duplet='TA', direction=TertiaryDirection.right)
     rpu = Acid(duplet='TC', direction=TertiaryDirection.left)
     lpy = Acid(duplet='TG', direction=TertiaryDirection.left)
     lpu = Acid(duplet='TT', direction=TertiaryDirection.left)
