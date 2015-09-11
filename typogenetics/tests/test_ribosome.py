@@ -9,7 +9,7 @@ class RibosomeTest(TestCase):
         amino_acids = list(ribosome_get_amino_acids_from_strands(strand))
         self.assertEqual(len(amino_acids), 0)
 
-    def test_can_convert_one_pair_to_amino_acid(self):
+    def test_can_convert_one_duplet_to_amino_acid(self):
         strand = 'AC'
         amino_acids = list(ribosome_get_amino_acids_from_strands(strand))
         self.assertListEqual([[AminoAcid.cut]], amino_acids)

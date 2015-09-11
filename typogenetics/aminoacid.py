@@ -19,7 +19,7 @@ class AminoAcid(Enum):
     lpu = 'TT'
 
     @classmethod
-    def get_acid_by_pair(cls, pair):
+    def get_acid_by_duplet(cls, duplet):
         for acid in cls:
-            if pair == acid.value:
+            if duplet == acid.value:
                 return acid
