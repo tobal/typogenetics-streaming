@@ -1,9 +1,8 @@
 
-from collections import namedtuple
 from .base import Base
 from .aminoacid import TertiaryDirection, AminoAcid
+from .working_enzyme import WorkingEnzyme
 
-WorkingEnzyme = namedtuple('WorkingEnzyme', 'strand pos')
 
 class Enzyme:
     def __init__(self, acid_chain):

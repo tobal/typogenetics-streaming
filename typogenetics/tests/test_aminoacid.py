@@ -1,5 +1,6 @@
 
 from ..aminoacid import AminoAcid, TertiaryDirection
+from ..working_enzyme import WorkingEnzyme
 from unittest import TestCase
 
 class AminoAcidTest(TestCase):
