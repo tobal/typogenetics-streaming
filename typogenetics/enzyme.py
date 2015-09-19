@@ -57,14 +57,6 @@ class Enzyme:
             if Base.get_base_by_symbol(symbol) == self.binding_preference:
                 return WorkingEnzyme(strand=strand, pos=idx)
 
-    def _apply_amino_acid_on_working_enzyme(self, amino_acid,  working_enzyme):
-        strand = working_enzyme.strand
-        pos = working_enzyme.pos
-        output_strand = ''
-        if amino_acid == AminoAcid.dlt:
-            strand = strand[:pos] + strand[pos + 1:]
-        if amino_acid == AminoAcid.mvr:
-            pos += 1
-        if amino_acid == AminoAcid.int:
-            strand = strand[:pos + 1] + 'T' + strand[pos + 1:]
-        return WorkingEnzyme(strand=strand, pos=pos), output_strand
+    @staticmethod
+    def _apply_amino_acid_on_working_enzyme(amino_acid,  working_enzyme):
+        return amino_acid.value.apply(working_enzyme)
