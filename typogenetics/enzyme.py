@@ -18,15 +18,11 @@ class Enzyme:
         return self._binding_preference
 
     def manipulate_strand(self, strand):
-        strands = []
         working_enzyme = self._bind_to_strand(strand)
         if working_enzyme:
-            for amino_acid in self._acid_chain:
-                working_enzyme, strand = self._apply_amino_acid_on_working_enzyme(amino_acid, working_enzyme)
-                if strand:
-                    strands.append(strand)
-            strands.append(working_enzyme.strand)
-        return strands
+            return self._apply_acid_commands(working_enzyme)
+        else:
+            return []
 
     def _determine_binding_preference(self):
         direction = self._determine_direction()
@@ -56,6 +52,15 @@ class Enzyme:
         for idx, symbol in enumerate(strand):
             if Base.get_base_by_symbol(symbol) == self.binding_preference:
                 return WorkingEnzyme(strand=strand, pos=idx)
+
+    def _apply_acid_commands(self, working_enzyme):
+        strands = []
+        for amino_acid in self._acid_chain:
+            working_enzyme, strand = self._apply_amino_acid_on_working_enzyme(amino_acid, working_enzyme)
+            if strand:
+                strands.append(strand)
+        strands.append(working_enzyme.strand)
+        return strands
 
     @staticmethod
     def _apply_amino_acid_on_working_enzyme(amino_acid,  working_enzyme):
