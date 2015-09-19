@@ -15,11 +15,16 @@ class Enzyme:
     def binding_preference(self):
         return self._binding_preference
 
+    def manipulate_strand(self, strand):
+        strands = []
+        return strands
+
     def _determine_binding_preference(self):
         direction = self._determine_direction()
         return self._binding_base_by_direction(direction)
 
-    def _binding_base_by_direction(self, direction):
+    @staticmethod
+    def _binding_base_by_direction(direction):
         if direction == 0:
             return Base.adenine
         if direction == 1:

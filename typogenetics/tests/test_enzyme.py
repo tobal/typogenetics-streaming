@@ -11,3 +11,10 @@ class EnzymeTest(TestCase):
         self.assertEqual(Enzyme([AminoAcid.int]).binding_preference, Base.cytozine)
         self.assertEqual(Enzyme([AminoAcid.swi]).binding_preference, Base.guanine)
         self.assertEqual(Enzyme([AminoAcid.swi, AminoAcid.swi]).binding_preference, Base.thymine)
+
+    def test_enzyme_can_manipulate_null_strand(self):
+        input_strand = ''
+        expected_strand = []
+        enzyme = Enzyme([AminoAcid.dlt, AminoAcid.mvr, AminoAcid.int])
+        output_strand = enzyme.manipulate_strand(input_strand)
+        self.assertListEqual(expected_strand, output_strand)
