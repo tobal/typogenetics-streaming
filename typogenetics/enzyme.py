@@ -5,6 +5,7 @@ from .aminoacid import TertiaryDirection
 class Enzyme:
     def __init__(self, acid_chain):
         self._acid_chain = acid_chain
+        self._binding_preference = self._determine_binding_preference()
 
     @property
     def acid_chain(self):
@@ -12,6 +13,9 @@ class Enzyme:
 
     @property
     def binding_preference(self):
+        return self._binding_preference
+
+    def _determine_binding_preference(self):
         direction = self._determine_direction()
         return self._binding_base_by_direction(direction)
 
