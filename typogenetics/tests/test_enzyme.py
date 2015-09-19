@@ -25,3 +25,10 @@ class EnzymeTest(TestCase):
         enzyme = Enzyme([AminoAcid.dlt])
         output_strand = enzyme.manipulate_strand(input_strand)
         self.assertListEqual(expected_strand, output_strand)
+
+    def test_enzyme_can_manipulate_simple_strand(self):
+        input_strand = 'ACA'
+        expected_strand = ['AAT']
+        enzyme = Enzyme([AminoAcid.dlt, AminoAcid.mvr, AminoAcid.int])
+        output_strand = enzyme.manipulate_strand(input_strand)
+        self.assertListEqual(expected_strand, output_strand)

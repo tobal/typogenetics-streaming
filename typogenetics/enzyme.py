@@ -64,4 +64,8 @@ class Enzyme:
         output_strand = ''
         if amino_acid == AminoAcid.dlt:
             strand = strand[:pos] + strand[pos + 1:]
+        if amino_acid == AminoAcid.mvr:
+            pos += 1
+        if amino_acid == AminoAcid.int:
+            strand = strand[:pos + 1] + 'T' + strand[pos + 1:]
         return WorkingEnzyme(strand=strand, pos=pos), output_strand
