@@ -44,13 +44,9 @@ def _off(working_enzyme):
 
 
 def _ina(working_enzyme):
-    strand = working_enzyme.strand
-    pos = working_enzyme.pos
+    output_enzyme = _insert_base(working_enzyme, 'A')
     output_strand = ''
-
-    strand = strand[:pos + 1] + 'A' + strand[pos + 1:]
-
-    return WorkingEnzyme(strand=strand, pos=pos), output_strand
+    return output_enzyme, output_strand
 
 
 def _inc(working_enzyme):
@@ -62,13 +58,9 @@ def _ing(working_enzyme):
 
 
 def _int(working_enzyme):
-    strand = working_enzyme.strand
-    pos = working_enzyme.pos
+    output_enzyme = _insert_base(working_enzyme, 'T')
     output_strand = ''
-
-    strand = strand[:pos + 1] + 'T' + strand[pos + 1:]
-
-    return WorkingEnzyme(strand=strand, pos=pos), output_strand
+    return output_enzyme, output_strand
 
 
 def _rpy(working_enzyme):
@@ -89,6 +81,13 @@ def _lpu(working_enzyme):
 
 def _cut(working_enzyme):
     pass
+
+
+def _insert_base(working_enzyme, base):
+    strand = working_enzyme.strand
+    pos = working_enzyme.pos
+    strand = strand[:pos + 1] + base + strand[pos + 1:]
+    return WorkingEnzyme(strand=strand, pos=pos)
 
 
 class TertiaryDirection(Enum):
