@@ -44,7 +44,13 @@ def _off(working_enzyme):
 
 
 def _ina(working_enzyme):
-    pass
+    strand = working_enzyme.strand
+    pos = working_enzyme.pos
+    output_strand = ''
+
+    strand = strand[:pos + 1] + 'A' + strand[pos + 1:]
+
+    return WorkingEnzyme(strand=strand, pos=pos), output_strand
 
 
 def _inc(working_enzyme):

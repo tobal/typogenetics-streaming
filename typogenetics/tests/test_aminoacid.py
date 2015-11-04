@@ -35,3 +35,11 @@ class AminoAcidTest(TestCase):
         expected_working_enzyme = WorkingEnzyme(strand='ATTA', pos=1)
         self.assertEqual(expected_working_enzyme, output_working_enzyme)
         self.assertEqual('', output_strand)
+
+    def test_ina(self):
+        input_working_enzyme = WorkingEnzyme(strand='ATA', pos=1)
+        insert_a = AminoAcid.ina
+        output_working_enzyme, output_strand = insert_a.value.apply(input_working_enzyme)
+        expected_working_enzyme = WorkingEnzyme(strand='ATAA', pos=1)
+        self.assertEqual(expected_working_enzyme, output_working_enzyme)
+        self.assertEqual('', output_strand)
