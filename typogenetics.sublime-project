@@ -1,24 +1,33 @@
 {
-    "folders":
-    [
-        {
-            "path": "typogenetics",
-            "name": "Typogenetics module",
-            "file_include_patterns": ["*.py"],
-            "follow_symlinks": true
-        }
-    ],
-    "settings":
-    {
-        "tab_size": 4
-    },
-    "build_systems":
-    [
-        {
-            "path": "$PATH:/home/tobal/.local/bin",
-            "name": "Run tests",
-            "working_dir": "$project_path/typogenetics",
-            "shell_cmd": "make tests"
-        }
-    ]
+	"build_systems":
+	[
+		{
+			"name": "Run tests",
+			"path": "$PATH:/home/tobal/.local/bin",
+			"shell_cmd": "make tests",
+			"working_dir": "$project_path/typogenetics"
+		},
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "python -u \"$file\""
+		}
+	],
+	"folders":
+	[
+		{
+			"file_include_patterns":
+			[
+				"*.py"
+			],
+			"follow_symlinks": true,
+			"name": "Typogenetics module",
+			"path": "typogenetics"
+		}
+	],
+	"settings":
+	{
+		"tab_size": 4
+	}
 }
