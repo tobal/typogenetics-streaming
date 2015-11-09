@@ -56,7 +56,9 @@ def _inc(working_enzyme):
 
 
 def _ing(working_enzyme):
-    pass
+    output_enzyme = _insert_base(working_enzyme, 'G')
+    output_strand = ''
+    return output_enzyme, output_strand
 
 
 def _int(working_enzyme):
