@@ -50,7 +50,9 @@ def _ina(working_enzyme):
 
 
 def _inc(working_enzyme):
-    pass
+    output_enzyme = _insert_base(working_enzyme, 'C')
+    output_strand = ''
+    return output_enzyme, output_strand
 
 
 def _ing(working_enzyme):
