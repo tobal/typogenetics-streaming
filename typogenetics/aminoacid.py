@@ -1,5 +1,5 @@
 
-from .working_enzyme import WorkingEnzyme
+from working_enzyme import WorkingEnzyme
 from enum import Enum
 from collections import namedtuple
 

@@ -1,6 +1,6 @@
 .PHONY: tests
 tests:
-	nosetests
+	python3 -m unittest discover tests
 
 .PHONY: clean
 clean:

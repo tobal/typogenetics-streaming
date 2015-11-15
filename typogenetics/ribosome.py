@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-from .aminoacid import AminoAcid
-from .enzyme import Enzyme
+from aminoacid import AminoAcid
+from enzyme import Enzyme
 
 
 def ribosome_get_enzymes_from_strand(strand):

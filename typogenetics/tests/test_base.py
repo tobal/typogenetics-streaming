@@ -1,5 +1,5 @@
 
-from ..base import Base
+from base import Base
 from unittest import TestCase
 
 class AminoAcidTest(TestCase):

@@ -1,7 +1,7 @@
 
-from .base import Base
-from .aminoacid import TertiaryDirection, AminoAcid
-from .working_enzyme import WorkingEnzyme
+from base import Base
+from aminoacid import TertiaryDirection, AminoAcid
+from working_enzyme import WorkingEnzyme
 
 
 class Enzyme:

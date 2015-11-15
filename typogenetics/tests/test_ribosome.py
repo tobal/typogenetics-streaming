@@ -1,6 +1,6 @@
 
-from ..ribosome import ribosome_get_enzymes_from_strand
-from ..aminoacid import AminoAcid
+from ribosome import ribosome_get_enzymes_from_strand
+from aminoacid import AminoAcid
 from unittest import TestCase
 
 class RibosomeTest(TestCase):

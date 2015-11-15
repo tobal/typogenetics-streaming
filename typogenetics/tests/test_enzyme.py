@@ -1,6 +1,6 @@
 
-from ..enzyme import Enzyme, Base
-from ..aminoacid import AminoAcid
+from enzyme import Enzyme, Base
+from aminoacid import AminoAcid
 from unittest import TestCase
 
 class EnzymeTest(TestCase):
