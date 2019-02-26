@@ -1,5 +1,5 @@
-.PHONY: tests
-tests:
+.PHONY: check
+check:
 	python3 -m unittest discover tests
 
 .PHONY: clean
